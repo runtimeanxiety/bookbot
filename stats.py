@@ -25,3 +25,20 @@ def count_characters():
             else:
                 char_count[char.lower()] += 1
     return char_count
+
+
+def sort_on(items):
+    return items["num"]
+
+
+def get_sorted_dict():
+    dict_list = []
+    dict = count_characters()
+    for char in dict:
+        new_dict = {}
+        num = dict[char]
+        new_dict["char"] = char
+        new_dict["num"] = num
+        dict_list.append(new_dict)
+    dict_list.sort(reverse=True, key=sort_on)
+    return dict_list
