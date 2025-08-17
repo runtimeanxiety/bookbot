@@ -5,20 +5,18 @@ def get_book_text(filepath):
 
 
 def get_num_words(text):
-    words = text.split()
-    return len(words)
+    return len(text.split())
 
 
 def count_characters(text):
     char_count = {}
     words = text.split()
     for word in words:
-        for char in word:
-            if char.lower() not in char_count:
-                char_count[char.lower()] = 0
-                char_count[char.lower()] += 1
+        for char in word.lower():
+            if char in char_count:
+                char_count[char] += 1
             else:
-                char_count[char.lower()] += 1
+                char_count[char] = 1
     return char_count
 
 
